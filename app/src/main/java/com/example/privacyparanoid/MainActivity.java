@@ -21,27 +21,43 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Context mycontext = getApplicationContext();
 
-        /*
-        //For disabling
+
+        //For CameraActivity
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openDisabler(mycontext);
+                openCameraActivity();
             }
         });
-        //For enabling
+
+        //For MicrophoneActivity
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openEnabler(mycontext);
+                openMicrophoneActivity();
             }
         });
-        */
+        //For LocationActivity
+        Button button5 = (Button) findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                openLocationActivity();
+            }
+        });
+        //For PermissionManagerActivity
+        Button button6 = (Button) findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                openPermissionManagerActivity();
+            }
+        });
 
         //For removing device admin
-        Button button4 = (Button) findViewById(R.id.button4);
+       Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -50,6 +66,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void openCameraActivity(){
+        Intent intent = new Intent(this, CameraActivity.class);
+        this.startActivity(intent);
+    }
+    public void openMicrophoneActivity(){
+        Intent intent = new Intent(this, MicrophoneActivity.class);
+        this.startActivity(intent);
+    }
+    public void openLocationActivity(){
+        Intent intent = new Intent(this, LocationActivity.class);
+        this.startActivity(intent);
+    }
+    public void openPermissionManagerActivity(){
+        Intent intent = new Intent(this, PermissionManagerActivity.class);
+        this.startActivity(intent);
     }
 
     public static Boolean checkAdmin(DevicePolicyManager device_policy_manager,ComponentName device_admin_receiver){
@@ -72,29 +105,4 @@ public class MainActivity extends AppCompatActivity {
         manageAdmin(context,device_admin_receiver);
 
     }
-    public void openDisabler(Context context){
-        DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
-        if(checkAdmin(device_policy_manager,device_admin_receiver)){
-            device_policy_manager.setCameraDisabled(device_admin_receiver, true);
-            Toast.makeText(context, "Camera Disabled!!!", Toast.LENGTH_SHORT).show();
-        }
-        else {
-           manageAdmin(context,device_admin_receiver);
-        }
-    }
-    public void openEnabler(Context context){
-        DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
-        if(checkAdmin(device_policy_manager,device_admin_receiver)){
-            device_policy_manager.setCameraDisabled(device_admin_receiver, false);
-            Toast.makeText(context, "Camera Enabled!!!", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            manageAdmin(context,device_admin_receiver);
-        }
-    }
-
-
-
 }
