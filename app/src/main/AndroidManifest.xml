@@ -14,17 +14,8 @@
         <activity android:name=".PermissionManagerActivity"></activity>
         <activity android:name=".LocationActivity" />
         <activity android:name=".MicrophoneActivity" />
-        <activity
-            android:name=".CameraActivity"
-            android:label="@string/title_activity_camera">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".CameraActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-   
 
         <activity android:name=".MainActivity">
             <intent-filter>

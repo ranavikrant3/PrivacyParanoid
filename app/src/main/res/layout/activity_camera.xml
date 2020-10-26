@@ -10,15 +10,17 @@
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="166dp"
         android:text="Disable Camera"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="166dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="136dp" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="341dp"
         android:text="Enable Camera"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="341dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="136dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
         final Context mycontext = getApplicationContext();
         //For disabling
-        Button button7 = (Button) findViewById(R.id.button2);
+        Button button7 = (Button) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -27,7 +27,7 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
         //For enabling
-        Button button8 = (Button) findViewById(R.id.button3);
+        Button button8 = (Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
