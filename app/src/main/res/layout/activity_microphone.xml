@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MicrophoneActivity">
 
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="126dp"
+        android:text="Disable Microphone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="110dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="309dp"
+        android:text="Enable Microphone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="113dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
