@@ -7,32 +7,31 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.UserManager;
 import android.view.View;
-import android.widget.Toast;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class MicrophoneActivity extends AppCompatActivity {
+public class DeviceWipeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_microphone);
+        setContentView(R.layout.activity_device_wipe);
         final Context mycontext = getApplicationContext();
-        //For disabling microphone
+        //For enabling wipe
         Button button9 = (Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openDisabler(mycontext);
+                enableWipe(mycontext);
             }
         });
-        //For enabling microphone
+        //For disabling wipe
         Button button10 = (Button) findViewById(R.id.button10);
         button10.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openEnabler(mycontext);
+                disableWipe(mycontext);
             }
         });
     }
@@ -49,23 +48,27 @@ public class MicrophoneActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    public void openDisabler(Context context){
+
+
+
+    public void enableWipe(Context context){
         DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
         if(checkAdmin(device_policy_manager,device_admin_receiver)){
-            //device_policy_manager.addUserRestriction(device_admin_receiver, UserManager.DISALLOW_UNMUTE_MICROPHONE);
-            Toast.makeText(context, "Microphone Disabled!!!", Toast.LENGTH_SHORT).show();
+
+            device_policy_manager.setMaximumFailedPasswordsForWipe(device_admin_receiver, 20);
+            Toast.makeText(context, "Password Brute Force Wipe Enabled!!!", Toast.LENGTH_SHORT).show();
         }
         else {
             manageAdmin(context,device_admin_receiver);
         }
     }
-    public void openEnabler(Context context){
+    public void disableWipe(Context context){
         DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
         if(checkAdmin(device_policy_manager,device_admin_receiver)){
-            //device_policy_manager.clearUserRestriction(device_admin_receiver, UserManager.DISALLOW_UNMUTE_MICROPHONE);
-            Toast.makeText(context, "Microphone Enabled!!!", Toast.LENGTH_SHORT).show();
+            device_policy_manager.setMaximumFailedPasswordsForWipe(device_admin_receiver,Integer.MAX_VALUE);
+            Toast.makeText(context, "Password Brute Force Wipe Disabled!!!", Toast.LENGTH_SHORT).show();
         }
         else {
             manageAdmin(context,device_admin_receiver);

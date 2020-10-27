@@ -30,10 +30,10 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:text="Manage Microphone"
+        android:layout_marginTop="308dp"
+        android:text="Password BruteForce Prevention"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="116dp" />
+        tools:layout_editor_absoluteX="84dp" />
 
     <Button
         android:id="@+id/button4"

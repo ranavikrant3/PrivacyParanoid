@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
     public void openMicrophoneActivity(){
-        Intent intent = new Intent(this, MicrophoneActivity.class);
+        Intent intent = new Intent(this, DeviceWipeActivity.class);
         this.startActivity(intent);
     }
     public void openLocationActivity(){

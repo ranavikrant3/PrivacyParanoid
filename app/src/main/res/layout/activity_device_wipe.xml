@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MicrophoneActivity">
+    tools:context=".DeviceWipeActivity">
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="126dp"
-        android:text="Disable Microphone"
+        android:text="Enable Device Wipe"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="110dp" />
 
@@ -19,8 +19,17 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="309dp"
-        android:text="Enable Microphone"
+        android:layout_marginTop="284dp"
+        android:text="Disable Device Wipe"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="113dp" />
+        tools:layout_editor_absoluteX="107dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="409dp"
+        android:text="WARNING: This feature factory resets your device after 20 failed password attempts"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
