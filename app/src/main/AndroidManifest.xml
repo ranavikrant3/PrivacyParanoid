@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PermissionManagerActivity"></activity>
         <activity android:name=".LocationActivity" />
-        <activity android:name=".MicrophoneActivity" />
+        <activity android:name=".DeviceWipeActivity" />
         <activity android:name=".CameraActivity" />
 
 
