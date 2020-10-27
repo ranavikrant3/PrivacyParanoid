@@ -56,7 +56,7 @@ public class DeviceWipeActivity extends AppCompatActivity {
         ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
         if(checkAdmin(device_policy_manager,device_admin_receiver)){
 
-            device_policy_manager.setMaximumFailedPasswordsForWipe(device_admin_receiver, 20);
+            device_policy_manager.setMaximumFailedPasswordsForWipe(device_admin_receiver, 10);
             Toast.makeText(context, "Password Brute Force Wipe Enabled!!!", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -67,6 +67,7 @@ public class DeviceWipeActivity extends AppCompatActivity {
         DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
         if(checkAdmin(device_policy_manager,device_admin_receiver)){
+
             device_policy_manager.setMaximumFailedPasswordsForWipe(device_admin_receiver,Integer.MAX_VALUE);
             Toast.makeText(context, "Password Brute Force Wipe Disabled!!!", Toast.LENGTH_SHORT).show();
         }

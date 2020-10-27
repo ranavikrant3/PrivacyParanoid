@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //For MicrophoneActivity
+        //For Data Wiping Activity
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openMicrophoneActivity();
+                openDeviceWipeActivity();
             }
         });
         //For LocationActivity
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CameraActivity.class);
         this.startActivity(intent);
     }
-    public void openMicrophoneActivity(){
+    public void openDeviceWipeActivity(){
         Intent intent = new Intent(this, DeviceWipeActivity.class);
         this.startActivity(intent);
     }
