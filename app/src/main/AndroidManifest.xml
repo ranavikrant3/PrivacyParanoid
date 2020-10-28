@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PermissionManagerActivity"></activity>
+        <activity android:name=".RemoteWipeActivity"></activity>
         <activity android:name=".LocationActivity" />
         <activity android:name=".DeviceWipeActivity" />
         <activity android:name=".CameraActivity" />

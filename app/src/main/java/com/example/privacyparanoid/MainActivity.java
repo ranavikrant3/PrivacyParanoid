@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 openLocationActivity();
             }
         });
-        //For PermissionManagerActivity
+        //For RemoteWipeActivity
         Button button6 = (Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                openPermissionManagerActivity();
+                openRemoteWipeActivity();
             }
         });
 
@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LocationActivity.class);
         this.startActivity(intent);
     }
-    public void openPermissionManagerActivity(){
-        Intent intent = new Intent(this, PermissionManagerActivity.class);
+    public void openRemoteWipeActivity(){
+        Intent intent = new Intent(this, RemoteWipeActivity.class);
         this.startActivity(intent);
     }
 

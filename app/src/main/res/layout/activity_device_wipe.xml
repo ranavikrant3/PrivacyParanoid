@@ -10,19 +10,21 @@
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="124dp"
         android:text="Enable Device Wipe"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="110dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="284dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="272dp"
         android:text="Disable Device Wipe"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="107dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"

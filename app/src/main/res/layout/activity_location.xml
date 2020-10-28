@@ -10,26 +10,29 @@
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="96dp"
         android:text="Enable Fake Location"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="114dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="367dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="364dp"
         android:text="Disable Fake Location"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="114dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="244dp"
         android:text="Sets GPS longitude, latitude, altitude and speed to 0"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="34dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
