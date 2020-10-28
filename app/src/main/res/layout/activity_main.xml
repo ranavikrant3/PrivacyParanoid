@@ -6,60 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="225dp"
-        android:text="Privacy Paranoid By Concordia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="84dp"
         android:text="Manage Camera"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="134dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="164dp"
         android:text="Password BruteForce Prevention"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="84dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="616dp"
-        android:text="Remove Permissions"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="116dp" />
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="408dp"
+        android:text="Remove App Permissions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="399dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="244dp"
         android:text="Manage Location"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="129dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="505dp"
-        android:text="Permission Manager"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="117dp" />
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="332dp"
+        android:text="Remote Wipe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="492dp"
+        android:text="Privacy Paranoid By Concordia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
