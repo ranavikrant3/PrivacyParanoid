@@ -39,20 +39,33 @@ public class LocationActivity extends AppCompatActivity {
         });
     }
     public void enableFake(Context context){
-        Location fake_location = new Location(LocationManager.NETWORK_PROVIDER);
-        fake_location.setLatitude(0);
-        fake_location.setLongitude(0);
-        fake_location.setAccuracy((float) 0.001);
-        fake_location.setAltitude(0);
-        fake_location.setSpeed(0);
+        Location fake_location_gps = new Location(LocationManager.GPS_PROVIDER);
+        Location fake_location_network = new Location(LocationManager.NETWORK_PROVIDER);
+        fake_location_gps.setLatitude(0);
+        fake_location_gps.setLongitude(0);
+        fake_location_gps.setAccuracy((float) 0.001);
+        fake_location_gps.setAltitude(0);
+        fake_location_gps.setSpeed(0);
         long system_time_now=System.currentTimeMillis();
-        fake_location.setTime(system_time_now);
-        fake_location.setElapsedRealtimeNanos(System.nanoTime());
+        fake_location_gps.setTime(system_time_now);
+        fake_location_gps.setElapsedRealtimeNanos(System.nanoTime());
+
+        fake_location_network.setLatitude(0);
+        fake_location_network.setLongitude(0);
+        fake_location_network.setAccuracy((float) 0.001);
+        fake_location_network.setAltitude(0);
+        fake_location_network.setSpeed(0);
+        long system_time_now2=System.currentTimeMillis();
+        fake_location_network.setTime(system_time_now2);
+        fake_location_network.setElapsedRealtimeNanos(System.nanoTime());
         LocationManager location_manager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         try {
             location_manager.addTestProvider(LocationManager.GPS_PROVIDER, false, false, false, false, true, true, true, 0, 1);
             location_manager.setTestProviderEnabled(LocationManager.GPS_PROVIDER, true);
-            location_manager.setTestProviderLocation(LocationManager.GPS_PROVIDER, fake_location);
+            location_manager.setTestProviderLocation(LocationManager.GPS_PROVIDER, fake_location_gps);
+            location_manager.addTestProvider(LocationManager.NETWORK_PROVIDER, false, false, false, false, true, true, true, 0, 1);
+            location_manager.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER, true);
+            location_manager.setTestProviderLocation(LocationManager.NETWORK_PROVIDER, fake_location_network);
             Toast.makeText(context, "Fake Location enabled!!!", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
@@ -63,6 +76,7 @@ public class LocationActivity extends AppCompatActivity {
         LocationManager location_manager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         try{
             location_manager.setTestProviderEnabled(LocationManager.GPS_PROVIDER,false);
+            location_manager.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER,false);
             Toast.makeText(context, "Fake Location disabled!!!", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
