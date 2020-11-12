@@ -1,7 +1,9 @@
 package com.example.privacyparanoid;
 //Privacy Protection by github.com/vikrantrana1996
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Context mycontext = getApplicationContext();
-
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, 0);
 
         //For CameraActivity
         Button button2 = (Button) findViewById(R.id.button2);
