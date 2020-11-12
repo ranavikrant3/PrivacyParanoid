@@ -23,6 +23,7 @@ public class SharedPreferencesGetSet {
 public void setKey(Long l){
     SharedPreferences.Editor wipeKeyEditor = wipeKeyStorage.edit();
      wipeKeyEditor.putLong("dangerous_wipe_key",l);
+     wipeKeyEditor.commit();
  }
 public long getKey(){
     long dangerous_wipe_key=wipeKeyStorage.getLong("dangerous_wipe_key",0);

@@ -16,10 +16,9 @@ public class ReceiveSmsAndWipe extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        //SharedPreferences wipeKeyStorage = context.getSharedPreferences("WipeKeyStorage",MODE_PRIVATE);
-        //long dangerous_wipe_key=wipeKeyStorage.getLong("dangerous_wipe_key",0);
+        
         SharedPreferencesGetSet myobj=new SharedPreferencesGetSet();
-        Toast.makeText(context,Long.toString(myobj.getKey()), Toast.LENGTH_LONG).show();
+        //Toast.makeText(context,Long.toString(myobj.getKey()), Toast.LENGTH_LONG).show();
         if (myobj.getKey()==0){return;}
         SmsMessage array_of_sms[] = android.provider.Telephony.Sms.Intents.getMessagesFromIntent(intent);
         int sms_index=0;
