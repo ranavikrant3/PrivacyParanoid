@@ -36,8 +36,9 @@ public class RemoteWipeActivity extends AppCompatActivity {
         });
     }
     public void enableAndGenerateWipeKey(Context context){
-        SharedPreferences wipeKeyStorage = context.getSharedPreferences("WipeKeyStorage",MODE_PRIVATE);
-        SharedPreferences.Editor wipeKeyEditor = wipeKeyStorage.edit();
+       // SharedPreferences wipeKeyStorage = context.getSharedPreferences("WipeKeyStorage",MODE_PRIVATE);
+        //SharedPreferences.Editor wipeKeyEditor = wipeKeyStorage.edit();
+        SharedPreferencesGetSet myobj=new SharedPreferencesGetSet();
         Random random=new Random();
         Long randomKey=0L;
         for (int x=0;x<10000;x++){
@@ -49,7 +50,7 @@ public class RemoteWipeActivity extends AppCompatActivity {
             Toast.makeText(context,"Failed to generate a secret key!!!", Toast.LENGTH_LONG).show();
         }
         else {
-            wipeKeyEditor.putLong("dangerous_wipe_key", randomKey);
+            myobj.setKey(randomKey);
             Toast.makeText(context,Long.toString(randomKey), Toast.LENGTH_LONG).show();
         }
     }
