@@ -51,14 +51,13 @@ public class RemoteWipeActivity extends AppCompatActivity {
         }
         else {
             myobj.setKey(randomKey);
-            Toast.makeText(context,Long.toString(randomKey), Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"Your secret key is: wipe"+Long.toString(randomKey), Toast.LENGTH_LONG).show();
         }
     }
     public void disableWipeKey(Context context){
-        SharedPreferences wipeKeyStorage = context.getSharedPreferences("WipeKeyStorage",MODE_PRIVATE);
-        SharedPreferences.Editor wipeKeyEditor = wipeKeyStorage.edit();
-        wipeKeyEditor.putLong("dangerous_wipe_key", 0L);
-        Toast.makeText(context,"Disabled remote sms wipe!!!", Toast.LENGTH_LONG).show();
+        SharedPreferencesGetSet myobj=new SharedPreferencesGetSet();
+        myobj.setKey(0L);
+        Toast.makeText(context,"Disabled remote device wipe!!!", Toast.LENGTH_SHORT).show();
     }
 
 }
