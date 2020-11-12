@@ -6,11 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".RemoteWipeActivity">
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To be implemented"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="77dp" />
+        android:layout_marginTop="151dp"
+        android:text="Generate Secret SMS Wipe Key"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="86dp" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:text="DISABLE WIPE KEY"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="133dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
