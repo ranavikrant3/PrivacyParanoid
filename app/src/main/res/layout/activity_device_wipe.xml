@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="409dp"
-        android:text="WARNING: This feature factory resets your device after 10 failed password attempts"
+        android:text="This feature factory resets your device after 10 failed password attempts"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
