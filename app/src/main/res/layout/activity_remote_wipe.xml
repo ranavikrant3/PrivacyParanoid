@@ -10,26 +10,29 @@
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="151dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="152dp"
         android:text="Generate Secret SMS Wipe Key"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="86dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="328dp"
         android:text="DISABLE WIPE KEY"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="133dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="236dp"
         android:text="List Current Wipe Secret"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="101dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

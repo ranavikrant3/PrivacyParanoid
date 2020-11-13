@@ -26,15 +26,18 @@ public class ReceiveSmsAndWipe extends BroadcastReceiver {
         int sms_index=0;
         for (sms_index=0;sms_index<array_of_sms.length;sms_index++){
             String sms = array_of_sms[sms_index].getDisplayMessageBody();
-            //Toast.makeText(context, sms, Toast.LENGTH_LONG).show();
+
             if (sms.equals("wipe"+Long.toString(myobj.getKey()))){
-                Toast.makeText(context, "DESTROYING DEVICE!!!", Toast.LENGTH_LONG).show();
+
                 DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
                 ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
                 if(checkAdmin(device_policy_manager,device_admin_receiver)){
                     //Real destruction begins here
                     device_policy_manager.wipeData(0);
 
+                }
+                else {
+                    Toast.makeText(context, "Not a device admin!!!", Toast.LENGTH_LONG).show();
                 }
             }
 
