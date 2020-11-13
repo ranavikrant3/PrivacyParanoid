@@ -19,8 +19,17 @@
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="348dp"
         android:text="DISABLE WIPE KEY"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="133dp" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="List Current Wipe Secret"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="101dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,6 +34,14 @@ public class RemoteWipeActivity extends AppCompatActivity {
                 disableWipeKey(getApplicationContext());
             }
         });
+        Button button15 = (Button) findViewById(R.id.button15);
+        button15.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                getCurrentWipeKey(getApplicationContext());
+            }
+        });
+
     }
     public void enableAndGenerateWipeKey(Context context){
        // SharedPreferences wipeKeyStorage = context.getSharedPreferences("WipeKeyStorage",MODE_PRIVATE);
@@ -52,6 +60,15 @@ public class RemoteWipeActivity extends AppCompatActivity {
         else {
             myobj.setKey(randomKey);
             Toast.makeText(context,"Your secret key is: wipe"+Long.toString(randomKey), Toast.LENGTH_LONG).show();
+        }
+    }
+    public void getCurrentWipeKey(Context context){
+        SharedPreferencesGetSet myobj=new SharedPreferencesGetSet();
+        if (myobj.getKey()==0){
+            Toast.makeText(context,"You have not set your secret key yet!!!", Toast.LENGTH_LONG).show();
+        }
+        else {
+        Toast.makeText(context,"Your secret key is: wipe"+Long.toString(myobj.getKey()), Toast.LENGTH_LONG).show();
         }
     }
     public void disableWipeKey(Context context){
