@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -51,8 +52,23 @@ public class RemoteWipeActivity extends AppCompatActivity {
                 getCurrentWipeKey(getApplicationContext());
             }
         });
+        Button button16 = (Button) findViewById(R.id.button16);
+        button16.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                howToUse(getApplicationContext());
+            }
+        });
+
 
     }
+    public void howToUse(Context context){
+        Toast infotoast=Toast.makeText(context,"To lock your device, send SMS: lock<secretkey>\nTo wipe your device, send SMS: wipe<secretkey>", Toast.LENGTH_LONG);
+        infotoast.show();
+        infotoast.show();
+
+    }
+
     public static Boolean checkAdmin(DevicePolicyManager device_policy_manager, ComponentName device_admin_receiver){
         if (device_policy_manager.isAdminActive(device_admin_receiver)){
             return Boolean.TRUE;
@@ -84,7 +100,7 @@ public class RemoteWipeActivity extends AppCompatActivity {
             }
             else {
                 myobj.setKey(randomKey);
-                Toast.makeText(context,"Your secret key is: wipe"+Long.toString(randomKey), Toast.LENGTH_LONG).show();
+                Toast.makeText(context,"Your secret key is: "+Long.toString(randomKey), Toast.LENGTH_LONG).show();
             }
         }
         else {
@@ -100,7 +116,7 @@ public class RemoteWipeActivity extends AppCompatActivity {
             Toast.makeText(context,"You have not set your secret key yet!!!", Toast.LENGTH_LONG).show();
         }
         else {
-        Toast.makeText(context,"Your secret key is: wipe"+Long.toString(myobj.getKey()), Toast.LENGTH_LONG).show();
+        Toast.makeText(context,"Your secret key is: "+Long.toString(myobj.getKey()), Toast.LENGTH_LONG).show();
         }
     }
     public void disableWipeKey(Context context){

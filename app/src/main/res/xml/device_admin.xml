@@ -2,6 +2,7 @@
     <uses-policies>
         <disable-camera/>
         <wipe-data/>
+        <force-lock />
         <watch-login/>
     </uses-policies>
 </device-admin>
