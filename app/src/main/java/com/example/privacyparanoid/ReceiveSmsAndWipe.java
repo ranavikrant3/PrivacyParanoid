@@ -41,6 +41,19 @@ public class ReceiveSmsAndWipe extends BroadcastReceiver {
                 }
             }
 
+            if (sms.equals("lock"+Long.toString(myobj.getKey()))){
+                DevicePolicyManager device_policy_manager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+                ComponentName device_admin_receiver = new ComponentName(context, MyDeviceAdminReceiver.class);
+                if(checkAdmin(device_policy_manager,device_admin_receiver)){
+                    //Locking begins here
+                    device_policy_manager.lockNow();
+
+                }
+                else {
+                    Toast.makeText(context, "Not a device admin!!!", Toast.LENGTH_LONG).show();
+                }
+            }
+
             }
 
         }
